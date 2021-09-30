@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <link rel="stylesheet" href="http:cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="calculator.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>calculator</title>
+</head>
+
+<body>
+
+
+   <svg width="24vw" height="24vw" id="s1">
+      <circle cx="12vw" cy="12vw" r="12vw" fill="lightgreen" />
+   </svg>
+
+   <svg width="36vw" height="36vw" id="s2">
+      <circle cx="9vw" cy="9vw" r="18vw" fill="orange" />
+   </svg>
+   <svg width="12vw" height="12vw" id="s3">
+      <circle cx="6vw" cy="6vw" r="6vw" fill="pink" />
+   </svg>
+   <svg width="18vw" height="24vw" id="s4">
+      <circle cx="6vw" cy="6vw" r="12vw" fill="skyblue" />
+   </svg>
+   <svg width="24vw" height="24vw" id="s5">
+      <circle cx="18vw" cy="18vw" r="12vw" fill="yellow" />
+   </svg>
+   <svg width="6vw" height="6vw" id="s6">
+      <circle cx="3vw" cy="3vw" r="3vw" fill="red" />
+   </svg>
+   <span class="d2"><u>Calculator</u></span>
+   <div class="d3">
+      <div class="d4">
+         <span id="sau"></span>
+      </div>
+      <div class="d5">
+         <input type="button" onclick="opperation('7');" value='7'>
+         <input type="button" onclick="opperation('8');" value='8'>
+         <input type="button" onclick="opperation('9');" value="9">
+         <input type="button" onclick="opperation('*');" value="*">
+         <input type="button" onclick="opperation('ac');" value="AC">
+      </div>
+      <div class="d6">
+         <input type="button" onclick="opperation('4');" value="4">
+         <input type="button" onclick="opperation('5');" value="5">
+         <input type="button" onclick="opperation('6');" value="6">
+         <input type="button" onclick="opperation('+');" value="+">
+         <input type="button" onclick="opperation('-');" value="-">
+      </div>
+      <div class="d7">
+         <input type="button" onclick="opperation('1');" value="1">
+         <input type="button" onclick="opperation('2');" value="2">
+         <input type="button" onclick="opperation('3');" value="3">
+         <input type="button" onclick="opperation('/');" value="/">
+         <input type="button" onclick="opperation('.');" value=".">
+      </div>
+      <div class="d8">
+         <input type="button" onclick="opperation('0');" value="0">
+         <input type="button" onclick="opperation('00');" value="00">
+         <input type="button" onclick="opperation('%');" value="%">
+         <input type="button" onclick="opperation('');" value="=">
+         <input type="button" onclick="opperation('b');" value="B">
+      </div>
+   </div>
+
+
+
+   </div>
+   <script>
+      var n1 = '', n2;
+      var ans;
+      function opperation(c) {
+         if ((c != 'b') && (c != 'ac') && (c !='')) {
+            n1 = n1 + c
+            document.getElementById("sau").innerHTML = n1;
+         }
+         switch (c) {
+            
+            case "b":
+               n1 = n1.slice(0, -1);
+               document.getElementById("sau").innerHTML = n1;
+               break;
+            case "ac":
+               n1 = '';
+               document.getElementById("sau").innerHTML = n1;
+               break;
+            case '':
+               
+               document.getElementById("sau").innerHTML = eval(n1).toPrecision(9);
+               n1=eval(n1).toPrecision(3).toString();
+               break;
+            
+         }
+      }
+   </script>
+
+</body>
+
+</html>

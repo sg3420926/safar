@@ -1,0 +1,12 @@
+.Photos{
+    margin:auto ;
+    padding: 10px;
+    width: 95%;
+    height:20vw;
+    background-color:aqua;
+    border :2px solid;
+    border-radius: 15px;
+    background-repeat: repeat-x;
+    background-position: center;
+    background-size: contain;
+}
