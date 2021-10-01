@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react'
 import axios from 'axios'
+import {FaBraille,FaCat,FaDog,FaGrinSquint,FaArrowAltCircleRight} from 'react-icons/fa'
 
 function Random(){
   const [thought,setThought]=useState({})
@@ -55,15 +56,15 @@ function Random(){
   return (
     <>
       <div className='d10'>
-        <button onClick={Th} ><i className="fas fa-braille" />Good Words</button>
-        <button onClick={ca}><i className="fas fa-cat" />Cutie Cats</button>
-        <button onClick={dg}><i className="fas fa-dog" />Loyal Dogs</button>
-        <button onClick={jo}><i className="far fa-grin-squint-tears"></i>Jokes</button>
+        <button onClick={Th} ><FaBraille/>Good Words</button>
+        <button onClick={ca}><FaCat/>Cutie Cats</button>
+        <button onClick={dg}><FaDog/>Loyal Dogs</button>
+        <button onClick={jo}><FaGrinSquint/>Jokes</button>
       </div>
       <div className='d11'>
           {de}   
       </div>
-      <span className='b1' onClick={ch}><i class="fas fa-arrow-circle-right" />Next</span>
+      <span className='b1' onClick={ch}><FaArrowAltCircleRight/>Next</span>
     </>
   )
 }
